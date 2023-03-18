@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { LoadingSpinner, Post } from '../../components'
+import { Error, LoadingSpinner, Post } from '../../components'
 import { getPosts } from '../../api'
 import styles from './Posts.module.scss'
 
@@ -9,7 +9,7 @@ const Posts = () => {
 
   if (isLoading) return <LoadingSpinner />
 
-  if (isError) return <p>Something went wrong!</p>
+  if (isError) return <Error />
 
   return (
     <div className={styles.container}>

@@ -5,18 +5,26 @@ import CommentItem from '../CommentItem/CommentItem'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 import { getPostComments } from '../../api'
 import styles from './Comments.module.scss'
+import Error from '../Error/Error'
 
 const Comments = () => {
   const params = useParams()
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ['comments', params.id],
     queryFn: () => getPostComments(params.id!),
   })
 
   if (isLoading) return <LoadingSpinner />
 
-  if (isError) return <p>Something went wrong!</p>
+  if (isError) {
+    return (
+      <Error
+        errorMsg='Something went wrong while loading the comments!'
+        refetchFunc={refetch}
+      />
+    )
+  }
 
   return (
     <fieldset className={styles['comments-container']}>

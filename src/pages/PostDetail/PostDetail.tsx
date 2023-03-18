@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
-import { Comments, LoadingSpinner } from '../../components'
+import { Comments, Error, LoadingSpinner } from '../../components'
 import { getPost } from '../../api'
 import styles from './PostDetail.module.scss'
 
@@ -15,7 +15,7 @@ const PostDetail = () => {
 
   if (isLoading) return <LoadingSpinner />
 
-  if (isError) return <p>Something went wrong!</p>
+  if (isError) return <Error />
 
   const { title, body } = data.data
 
