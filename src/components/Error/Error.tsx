@@ -19,13 +19,11 @@ const Error = (props: ErrorProps) => {
     <div className={styles.error}>
       <img src={error} alt='Error' />
 
-      <div>
-        <h2>{errorMsg}</h2>
+      <h2>{errorMsg}</h2>
 
-        <p>
-          Click <span onClick={refetchFunc}>here</span> to try again.
-        </p>
-      </div>
+      <p>
+        Click <span onClick={refetchFunc}>here</span> to try again.
+      </p>
     </div>
   )
 }

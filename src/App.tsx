@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router'
 
-import { PostDetail, Posts } from './pages'
+import { NotFound, PostDetail, Posts } from './pages'
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Posts />} />
         <Route path='/post/:id' element={<PostDetail />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </main>
   )
