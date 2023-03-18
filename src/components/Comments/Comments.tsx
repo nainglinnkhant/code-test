@@ -2,6 +2,7 @@ import { useParams } from 'react-router'
 import { useQuery } from '@tanstack/react-query'
 
 import CommentItem from '../CommentItem/CommentItem'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
 import { getPostComments } from '../../api'
 import styles from './Comments.module.scss'
 
@@ -13,7 +14,7 @@ const Comments = () => {
     queryFn: () => getPostComments(params.id!),
   })
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <LoadingSpinner />
 
   if (isError) return <p>Something went wrong!</p>
 

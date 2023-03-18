@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { Post } from '../../components'
+import { LoadingSpinner, Post } from '../../components'
 import { getPosts } from '../../api'
 import styles from './Posts.module.scss'
 
 const Posts = () => {
   const { data, isLoading, isError } = useQuery({ queryKey: ['posts'], queryFn: getPosts })
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <LoadingSpinner />
 
   if (isError) return <p>Something went wrong!</p>
 
