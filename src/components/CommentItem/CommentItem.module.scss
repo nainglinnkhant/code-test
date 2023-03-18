@@ -2,10 +2,9 @@
   margin-bottom: 2rem;
   display: flex;
 
-  img {
-    width: 45px;
-    height: 45px;
+  .img-container {
     margin-right: 1rem;
+    border-radius: 50%;
   }
 
   &-name {

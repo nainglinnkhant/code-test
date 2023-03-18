@@ -16,6 +16,7 @@ specifiers:
   react-router: ^6.9.0
   react-router-dom: ^6.9.0
   react-scripts: 5.0.1
+  react-skeleton-image: ^0.0.5
   sass: ^1.59.3
   typescript: ^4.9.5
   web-vitals: ^2.1.4
@@ -36,6 +37,7 @@ dependencies:
   react-router: 6.9.0_react@18.2.0
   react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_iwfo353kotm3qtvzqlcl363wsi
+  react-skeleton-image: 0.0.5_react@18.2.0
   sass: 1.59.3
   typescript: 4.9.5
   web-vitals: 2.1.4
@@ -8477,6 +8479,14 @@ packages:
       - webpack-cli
       - webpack-hot-middleware
       - webpack-plugin-serve
+    dev: false
+
+  /react-skeleton-image/0.0.5_react@18.2.0:
+    resolution: {integrity: sha512-Ge1ayw1HRyILs3kW5Q9mcRvQ+yjumzRM1IX/yQ8UIaAdSWndGV9Kk/g7HZJZr4Rvj374lPt+Vi1ZdpqxwvEpFQ==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react/18.2.0:
