@@ -1,0 +1,23 @@
+.comment {
+  margin-bottom: 2rem;
+  display: flex;
+
+  img {
+    width: 45px;
+    height: 45px;
+    margin-right: 1rem;
+  }
+
+  &-name {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  &-body {
+    font-size: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.comments-container {
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid $grey;
+
+  legend {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+  }
+}

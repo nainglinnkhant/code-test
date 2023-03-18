@@ -1,5 +1,16 @@
+import { Route, Routes } from 'react-router'
+
+import { PostDetail, Posts } from './pages'
+
 function App() {
-  return <h1>Hello World</h1>
+  return (
+    <main>
+      <Routes>
+        <Route path='/' element={<Posts />} />
+        <Route path='/post/:id' element={<PostDetail />} />
+      </Routes>
+    </main>
+  )
 }
 
 export default App
