@@ -9,7 +9,7 @@ const Comments = () => {
   const params = useParams()
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['comments'],
+    queryKey: ['comments', params.id],
     queryFn: () => getPostComments(params.id!),
   })
 
