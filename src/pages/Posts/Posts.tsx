@@ -8,22 +8,28 @@ import styles from './Posts.module.scss'
 const Posts = () => {
   const searchKeyword = useAppSelector((state) => state.posts.searchKeyword)
 
-  const { data, isLoading, isError } = useQuery({ queryKey: ['posts'], queryFn: getPosts })
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['posts'],
+    queryFn: getPosts,
+    select: (data) => {
+      return data.data?.filter((post) =>
+        post.title.toLowerCase().includes(searchKeyword.toLowerCase())
+      )
+    },
+  })
 
   if (isLoading) return <LoadingSpinner />
 
   if (isError) return <Error />
-
-  const matchedPosts = data.data.filter((post) => post.title.includes(searchKeyword))
 
   return (
     <div className={styles.container}>
       <SearchBar />
 
       <div className={styles['posts-container']}>
-        {matchedPosts.length === 0 && <p>Posts not found!</p>}
+        {data.length === 0 && <p>Posts not found!</p>}
 
-        {matchedPosts.map((post) => (
+        {data.map((post) => (
           <Post key={post.id} post={post} />
         ))}
       </div>
