@@ -8,6 +8,10 @@
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
+  @include mobile {
+    margin: 2.5rem 2rem;
+  }
 }
 
 .posts-container {
