@@ -1,11 +1,11 @@
 import { useDeferredValue, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 
-import { setSearchKeyword } from '../../store/posts/postsSlice'
+import { useAppDispatch } from '../../app/hooks'
+import { setSearchKeyword } from '../../features/posts/postsSlice'
 import styles from './SearchBar.module.scss'
 
 const SearchBar = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const [keyword, setKeyword] = useState<string>('')
 

@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 
+import { useAppSelector } from '../../app/hooks'
 import { Error, LoadingSpinner, Post, SearchBar } from '../../components'
-import { useAppSelector } from '../../hooks'
 import { getPosts } from '../../api'
 import styles from './Posts.module.scss'
 
