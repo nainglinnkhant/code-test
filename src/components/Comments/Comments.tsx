@@ -30,9 +30,9 @@ const Comments = () => {
     <fieldset className={styles['comments-container']}>
       <legend>Comments</legend>
 
-      {data.data.length === 0 && <p>There are no comments yet!</p>}
+      {data.length === 0 && <p>There are no comments yet!</p>}
 
-      {data.data.map((comment) => (
+      {data.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
       ))}
     </fieldset>

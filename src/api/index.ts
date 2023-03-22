@@ -7,9 +7,17 @@ const api = axios.create({
   timeout: 7000,
 })
 
-export const getPosts = () => api.get<Post[]>('/posts')
+export const getPosts = async () => {
+  const res = await api.get<Post[]>('/posts')
+  return res.data
+}
 
-export const getPost = (postId: string) => api.get<Post>(`/posts/${postId}`)
+export const getPost = async (postId: string) => {
+  const res = await api.get<Post>(`/posts/${postId}`)
+  return res.data
+}
 
-export const getPostComments = (postId: string) =>
-  api.get<Comment[]>(`posts/${postId}/comments`)
+export const getPostComments = async (postId: string) => {
+  const res = await api.get<Comment[]>(`posts/${postId}/comments`)
+  return res.data
+}

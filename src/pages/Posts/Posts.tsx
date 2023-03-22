@@ -12,7 +12,7 @@ const Posts = () => {
     queryKey: ['posts'],
     queryFn: getPosts,
     select: (data) => {
-      return data.data?.filter((post) =>
+      return data.filter((post) =>
         post.title.toLowerCase().includes(searchKeyword.toLowerCase())
       )
     },

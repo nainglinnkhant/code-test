@@ -17,7 +17,7 @@ const PostDetail = () => {
 
   if (isError) return <Error />
 
-  const { title, body } = data.data
+  const { title, body } = data
 
   return (
     <div className={styles.container}>
