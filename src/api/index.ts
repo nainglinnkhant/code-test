@@ -12,12 +12,12 @@ export const getPosts = async () => {
   return res.data
 }
 
-export const getPost = async (postId: string) => {
+export const getPost = async (postId: number) => {
   const res = await api.get<Post>(`/posts/${postId}`)
   return res.data
 }
 
-export const getPostComments = async (postId: string) => {
+export const getPostComments = async (postId: number) => {
   const res = await api.get<Comment[]>(`posts/${postId}/comments`)
   return res.data
 }

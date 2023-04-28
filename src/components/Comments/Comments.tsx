@@ -9,10 +9,11 @@ import Error from '../Error/Error'
 
 const Comments = () => {
   const params = useParams()
+  const postId = Number(params.id)
 
   const { data, isLoading, isError, refetch } = useQuery({
-    queryKey: ['comments', params.id],
-    queryFn: () => getPostComments(params.id!),
+    queryKey: ['posts', postId, 'comments'],
+    queryFn: () => getPostComments(postId),
   })
 
   if (isLoading) return <LoadingSpinner />
